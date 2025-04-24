@@ -22,37 +22,12 @@ const Extension = ({ context, runServerless, sendAlert }) => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedCSVDownloadLink, setGeneratedCSVDownloadLink] = useState(null);
 
-  useEffect(async () => {
-    fetchLineItemDetails()
-  }, [])
-
-  const fetchLineItemDetails = async () => {
-    setIsGenerating(true);
-    try {
-      const { response } = await runServerless({
-        name: "initFunc",
-        propertiesToSend: ['hs_object_id', 'genarated_line_item_csv']
-      });
-
-      if (response?.downloadLink) {
-        setGeneratedCSVDownloadLink(response.downloadLink);
-      }
-    } catch (error) {
-      sendAlert({
-        message: "Something went wrong",
-        type: "danger"
-      });
-    } finally {
-      setIsGenerating(false);
-    }
-  };
-
   const handleGenerateCSV = async () => {
     setIsGenerating(true);
     try {
       const { response } = await runServerless({
         name: "generateCSVFunc",
-        propertiesToSend: ['hs_object_id']
+        propertiesToSend: ['hs_object_id','dealname']
       });
 
       if (response?.downloadLink) {
