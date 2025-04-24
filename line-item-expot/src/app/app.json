@@ -1,0 +1,16 @@
+{
+  "name": "Export Line Item as a CSV",
+  "description": "",
+  "uid": "export_line_item_as_csv",
+  "scopes": ["crm.objects.deals.read","crm.objects.deals.write","crm.objects.line_items.read","files"],
+  "public": false,
+  "extensions": {
+    "crm": {
+      "cards": [
+        {
+          "file": "extensions/export_line_item_card.json"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "crm-card",
+  "data": {
+    "title": "Export Line Items",
+    "uid": "export_line_item_as_csv",
+    "location": "crm.record.sidebar",
+    "module": {
+      "file": "ExportCard.jsx"
+    },
+    "objectTypes": [{ "name": "deals" }]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "appFunctions": {
+    "initFunc": {
+      "file": "init-function.js",
+      "secrets": []
+    },
+    "generateCSVFunc": {
+      "file": "generate-csv-function.js",
+      "secrets": [],
+      "environment": {
+        "HUBSPOT_LINE_ITEM_FOLDER_ID": "189252086200",
+        "HUBSPOT_SINGED_URL_EXP_AT": 3600
+      }
+    }
+  }
+}
